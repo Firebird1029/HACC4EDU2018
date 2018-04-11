@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					h1.title.is-1(style="padding-top: 1rem;") Template
+			.hero-foot
+		article.article
+			include includes/body.pug
+			+section("Six Sustainability Goals")
+				div.localfood 
+					h3 Local Food
+				div.cleannrg 
+					h3 Clean Energy
+				div.userportal
+					h3 User Info
+				div.natresources
+					h3 Natural Resources
+				div.grnworkforce
+					h3 Green Education
+				div.sustainablecomm
+					h3 Sustainable Communities
+				div.wastereduce
+					h3 Waste Reduction
+
+		//- Footer
+		include includes/footer.pug
