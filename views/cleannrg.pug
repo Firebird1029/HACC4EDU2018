@@ -25,18 +25,15 @@ html(lang="en")
 				//
 				div.field
 					h4 Total Household Energy Use:
-					form(action="energy.php", method="_GET")
-						.label How many are in your household?
-							.control
-								input(class="input", type="text", placeholder="2, 3, etc.", id="members")
-								- var members = "[?]";
-						br
-						- var kwattperson = parseFloat(members)*51.3;
-						h4 Our Estimate: 
-						p(style="color: green") It costs the #{members} people living in your house #{kwattperson} to pay for electricity each month! Check our accuracy- compare this to your real monthly electricity bill. 
+					.label How many are in your household?
 						.control
-							input(type="submit", class="button is-success", onclick="members();")
-						br
+							input#membersInput(class="input", type="text", placeholder="2, 3, etc.")
+					br
+					h4 Our Estimate: 
+					p(style="color: green") It costs the #[ span#membersSpan ] people living in your house #[ span#householdCostSpan ] to pay for electricity each month! Check our accuracy—compare this to your real monthly electricity bill. 
+					//- .control
+					//- 	input(type="submit", class="button is-success", onclick="members();")
+					br
 				div.field
 					h4 Gas and Transportation:
 					form(action="gas.php", method="_GET") 

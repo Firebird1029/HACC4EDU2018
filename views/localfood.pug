@@ -5,7 +5,7 @@ html(lang="en")
 		section.hero.is-full-height
 			.hero-head
 				include includes/nav.pug
-			.hero-body
+			.hero-body(style="padding-bottom: 0px;")
 				.container.has-text-centered
 					h1.title.is-1(style="padding-top: 3rem;") Local Food
 			.hero-foot
@@ -17,32 +17,44 @@ html(lang="en")
 						.tile
 							.tile.is-parent.is-vertical
 								article.tile.is-child
+									p.title Map
 									.field.has-addons
 										.control.is-expanded
 											input#restaurantSearch.input(type="text", placeholder="Find a restaurant")
 										.control
 											a#restaurantSearchBtn.button.is-info
 												span Search
-
-								article.tile.is-child
-									p.title Map
 									div#map.is-fullwidth(style="height: 20rem;")
-								article.tile.is-child
-									p.title ...tiles
-									p.subtitle Bottom tile
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur porro dolor, alias voluptates error at libero provident. Voluptatem sed incidunt facere culpa cum, eaque reiciendis consectetur sit, adipisci exercitationem, quos.
+								article#checkInTile.tile.is-child
+									p.title Check-In
+									.box
+										article.media
+											.media-left
+												figure.image.is-64x64
+													img#restaurantPic
+											.media-content
+												.content
+													p
+														strong#restaurantName
+														br
+														span#restaurantAddress
+													p
+														button.button#checkInBtn Check-in
 					.tile.is-vertical
 						.tile
-							.tile.is-parent.is-vertical
+							.tile.is-parent.is-vertical(style="max-height: 23rem; overflow: scroll;")
 								article.tile.is-child.notification.is-warning
 									p.title Leaderboard
 									p.subtitle: strong Current Stats: 500 points
 									ol
-										li Brandon - 500 points
+										li John - 500 points
 										li Bob - 400 points
-								article.tile.is-child.is-warning
-									p.title Vouchers
-									p Coming soon!
+									hr.hr
+									p.subtitle: strong Recent Visits
+									ul#recentVisits
+								//- article.tile.is-child.is-warning
+								//- 	p.title Vouchers
+								//- 	p Coming soon!
 
 		//- Footer
 		include includes/footer.pug

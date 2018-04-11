@@ -2,6 +2,11 @@
 $primary: hsl(217, 71%, 53%);
 @import "./node_modules/bulma/bulma.sass";
 
+.hr {
+	border-top: 2px solid $dark;
+	background: none;
+}
+
 div.circle {
 	height: 175px;
 	width: 175px;

@@ -8,6 +8,10 @@ $("#restaurantSearchBtn").on("click", function searchYelp () {
 	socket.emit("yelpSearchRequest", {term: $("#restaurantSearch").val()});
 });
 
+$("#checkInBtn").on("click", function checkInBtnClicked () {
+	$("#recentVisits").prepend("<li>" + $("#restaurantName").text() + " - " + formatAMPM(new Date()) + "</li>");
+});
+
 $("#restaurantSearch").keyup(function (event) {
 	if (event.keyCode === 13) {
 		$("#restaurantSearchBtn").click();
@@ -31,7 +35,28 @@ function updateMap (coordinates, url) {
 
 socket.on("yelpSearchResponse",function yelpSearchResponse (data) {
 	console.log(data.businesses);
+
+	$("#restaurantName").text(data.businesses[0].name);
+	$("#restaurantAddress").text(data.businesses[0].location.address1);
+	$("#restaurantPic").prop("src", data.businesses[0].image_url);
+	$("#checkInTile").show();
+
 	_.forEach(data.businesses, function (store) {
 		updateMap(store.coordinates, store.url);
 	});
 });
+
+$(function () {
+	$("#checkInTile").hide();
+});
+
+function formatAMPM (date) {
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // the hour '0' should be '12'
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	var strTime = hours + ':' + minutes + ' ' + ampm;
+	return strTime;
+}
