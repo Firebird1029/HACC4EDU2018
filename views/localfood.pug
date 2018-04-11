@@ -7,12 +7,40 @@ html(lang="en")
 				include includes/nav.pug
 			.hero-body
 				.container.has-text-centered
-					h1.title.is-1(style="padding-top: 1rem;") ZEROin
+					h1.title.is-1(style="padding-top: 1rem;") Local Food
 			.hero-foot
 		article.article
 			include includes/body.pug
-			+section("Bob")
-				button.button(onclick="searchYelp()")
+			+section("")
+				.tile.is-ancestor
+					.tile.is-vertical.is-8
+						.tile
+							.tile.is-parent.is-vertical
+								article.tile.is-child
+									.field.has-addons
+										.control.is-expanded
+											input.input(type="text", placeholder="Find a restaurant")
+										.control
+											a.button.is-info
+												span Search
+
+								article.tile.is-child
+									p.title Map
+									div#map.is-fullwidth
+								article.tile.is-child
+									p.title ...tiles
+									p.subtitle Bottom tile
+									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur porro dolor, alias voluptates error at libero provident. Voluptatem sed incidunt facere culpa cum, eaque reiciendis consectetur sit, adipisci exercitationem, quos.
+					.tile.is-vertical
+						.tile
+							.tile.is-parent.is-vertical
+								article.tile.is-child.notification.is-primary
+									p.title Vertical...
+									p.subtitle Top tile
+								article.tile.is-child.is-warning
+									p.title ...tiles
+									p.subtitle Bottom tile
 
 		//- Footer
 		include includes/footer.pug
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADHAaXMUBH2Zrd56vb2xNFoNwTL_C9SSw&callback=initMap")
