@@ -11,20 +11,18 @@ html(lang="en")
 			.hero-foot
 		article.article
 			include includes/body.pug
-			+section("My Information")
+			+section("My Progress Information")
 				h4 Local Food
-				progress.progress.is-large.is-primary#localfoodprogress(value="30", max="100")  --- 30% 
+				progress.progress.is-large.is-success#localfoodprogress(value="30", max="100")  --- 30% 
 				h4 Clean Energy
-				progress.progress.is-large#cleannrgprogress(value="50", max="100")  --- 50%
+				progress.progress.is-large.is-warning#cleannrgprogress(value="50", max="100")  --- 50%
 				h4 Natural Resources
-				progress.progress.is-large#natresourcesprogress(value="75", max="100")  --- 75%
+				progress.progress.is-large.is-primary#natresourcesprogress(value="75", max="100")  --- 75%
 				h4 Green Education
-				progress.progress.is-large#grnworkforceprogress(value="0", max="100")  --- 0%
-				h4 Green Education
-				progress.progress.is-large#grnworkforceprogress(value="0", max="100")  --- 0% Get Started!
+				progress.progress.is-large.is-link#grnworkforceprogress(value="2", max="100")  --- 0%
 				h4 Sustainable Communities
-				progress.progress.is-large#sustainablecommprogress(value="0", max="100")  --- 0% Get Started!
+				progress.progress.is-large.is-info#sustainablecommprogress(value="8", max="100")  --- 0%
 				h4 Waste Reduction
-				progress.progress.is-large#wastereduceprogress(value="0", max="100")  --- 0% Get Started!
+				progress.progress.is-large.is-danger#wastereduceprogress(value="45", max="100")  --- 0%
 		//- Footer
 		include includes/footer.pug
