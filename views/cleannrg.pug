@@ -11,9 +11,13 @@ html(lang="en")
 			.hero-foot
 		article.article
 			include includes/body.pug
-			+section("Bob")
-				h4 Total Household Energy Use:
-				form 
+			+section("Your Clean Energy Report")
+				p 
+					strong *Integers, please!
+				br
+				div.totalenergy
+					h4 Total Household Energy Use:
+					form 
 						p How many in your household?
 						- var members = "[?] people";
 							input(type="text")
@@ -25,20 +29,27 @@ html(lang="en")
 						br
 						br
 						p Estimate:
-				h4 Gas and Transportation:
+						br
+				div.gasandtransport
+					h4 Gas and Transportation:
 					form 
-						p Make and Model
-							p mi/g
+							p Make and Model:
+								br
+								input(type="text")
+							p Miles/Gallon:
 							- var mipg = "miles per gallon";
 								input(type="text")
-							p $/g
+							br
+							br
+							p Dollars/Gallon:
+							- var dollarsg = "dollars per gallon";
 								input(type="text")
-							p Miles Driven per Day
+							p Your Miles/Day:
 							- var mipday = "miles per day";
 								input(type="text")
 							- var mipyr = parseFloat(mipday)*365;
-							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg);
-						p You spend $#{dollarsyr} annually on gas or fuel.
+							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
+							p You spend #{dollarsyr} dollars annually on gas or fuel.
 
 
 
