@@ -12,8 +12,7 @@ html(lang="en")
 		article.article
 			include includes/body.pug
 			+section("Your Clean Energy Report")
-				p 
-					strong *Integers, please!
+				p(style="color: green;") *Integers, please!
 				//
 				//
 				// HEY BRANDON THIS IS DIZA
@@ -24,47 +23,47 @@ html(lang="en")
 				// THX
 				//
 				//
-				div.totalnrgfield
+				div.field
 					h4 Total Household Energy Use:
 					form 
 						.label How many are in your household?
 						- var members = "[?]";
-							input(class="input", type="text", placeholder="2, 3, etc.")
+							.control
+								input(class="input", type="text", placeholder="2, 3, etc.")
 						br
+						- var kwattperson = parseFloat(members)*51.3;
+						h4 Our Estimate: 
+						p(style="color: green") It costs the #{members} people living in your house #{kwattperson} to pay for electricity each month! Check our accuracy- compare this to your real monthly electricity bill. 
 						br
-						.label How many rooms does your house have?
-						- var rooms = "[?]";
-							input(class="input", type="text", placeholder="7, 8, etc.")
-						br
-						br
-						p Estimate: The #{members} people living in your house use a lot of energy!
-						br
-				div.gasfield
+				div.field
 					h4 Gas and Transportation:
 					form 
-							.label Your Make and Model:
-							- var makenmodel = "[?]";
+						.label Your Make and Model:
+						- var makenmodel = "[?]";
+							.control
 								input(class="input", type="text", placeholder="2008 Ford Escape, etc.")
-							br
-							br
-							.label Miles/Gallon (City):
-							- var mipg = "[?]";
+						br
+						.label Miles/Gallon (City):
+						- var mipg = "[?]";
+							.control
 								input(class="input", type="text", placeholder="24, 25, etc.")
-							br
-							br
-							.label Dollars/Gallon:
-							- var dollarsg = "[?]";
+						br
+						.label Dollars/Gallon:
+						- var dollarsg = "[?]";
+							.control
 								input(class="input", type="text", placeholder="2.50, 3.00, etc.")
-							br
-							br
-							.label Your Average Miles/Day:
-							- var mipday = "[?]";
+						br
+						.label Your Average Miles/Day:
+						- var mipday = "[?]";
+							.control
 								input(class="input", type="text", placeholder="35, 36, etc.")
-							- var mipyr = parseFloat(mipday)*365;
-							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
-							br
-							br
-							p You drive a #{makenmodel} and spend approximately #{dollarsyr} dollars annually on gas or fuel.
+						- var mipyr = parseFloat(mipday)*365;
+						- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
+						br
+						p(style="color: green") You drive a #{makenmodel} and spend approximately #{dollarsyr} dollars annually on gas or fuel.
+						br
+				.control
+					button(class="button is-primary") Submit
 
 
 
