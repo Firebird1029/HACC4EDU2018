@@ -12,7 +12,7 @@ html(lang="en", title="Clean Energy")
 		article.article
 			include includes/body.pug
 			+section("Your Clean Energy Report")
-				p(style="color: green;") *Integers, please!
+				//- p(style="color: green;") *Integers, please!
 				//
 				//
 				// HEY BRANDON THIS IS DIZA
@@ -30,45 +30,34 @@ html(lang="en", title="Clean Energy")
 							input#membersInput(class="input", type="text", placeholder="2, 3, etc.")
 					br
 					h4 Our Estimate: 
-					p(style="color: green") It costs the #[ span#membersSpan ] people living in your house #[ span#householdCostSpan ] to pay for electricity each month! Check our accuracy—compare this to your real monthly electricity bill. 
+					p(style="color: green") It costs the #[span#membersSpan] people living in your house $#[span#householdCostSpan] to pay for electricity each month! Check our accuracy—compare this to your real monthly electricity bill. 
 					//- .control
 					//- 	input(type="submit", class="button is-success", onclick="members();")
 					br
 				div.field
 					h4 Gas and Transportation:
-					form(action="gas.php", method="_GET") 
-						.label Your Make and Model:
-						- var makenmodel = "[?]";
-							.control
-								input(class="input", type="text", placeholder="2008 Ford Escape, etc.")
-						br
-						.label Miles/Gallon (City):
-						- var mipg = "[?]";
-							.control
-								input(class="input", type="text", placeholder="24, 25, etc.")
-						br
-						.label Dollars/Gallon:
-						- var dollarsg = "[?]";
-							.control
-								input(class="input", type="text", placeholder="2.50, 3.00, etc.")
-						br
-						.label Your Average Miles/Day:
-						- var mipday = "[?]";
-							.control
-								input(class="input", type="text", placeholder="35, 36, etc.")
-						- var mipyr = parseFloat(mipday)*365;
-						- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
-						br
-						h4 Your Spendings:
-						p(style="color: green") You drive a #{makenmodel} and spend approximately #{dollarsyr} dollars annually on gas or fuel.
-						br
-						- var kgemissions = parseFloat(mipday)*.411*30;
-						- 
-						h4 Your Carbon Emissions:
-						p(style="color: green") You contribute approximately #{kgemissions} kilograms of CO2 emission each month.
+					.label Your Make and Model:
 						.control
-							input(type="submit", class="button is-success")
-						br
+							input#makenmodel.gasTransInputs(class="input", type="text", placeholder="2008 Ford Escape, etc.")
+					br
+					.label Miles/Gallon (City):
+						.control
+							input#mipg.gasTransInputs(class="input", type="text", placeholder="24, 25, etc.")
+					br
+					.label Dollars/Gallon:
+						.control
+							input#dollarsg.gasTransInputs(class="input", type="text", placeholder="2.50, 3.00, etc.")
+					br
+					.label Your Average Miles/Day:
+						.control
+							input#mipday.gasTransInputs(class="input", type="text", placeholder="35, 36, etc.")
+					br
+					h4 Your Spendings:
+					p(style="color: green") You drive a #[span#makenmodelSpan] and spend approximately $#[span#dollarsyrSpan] annually on gas or fuel.
+					br
+					h4 Your Carbon Emissions:
+					p(style="color: green") You contribute approximately #[span#kgemissionsSpan] kilograms of CO2 emission each month.
+					br
 
 
 
