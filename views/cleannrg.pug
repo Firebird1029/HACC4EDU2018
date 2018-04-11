@@ -7,7 +7,7 @@ html(lang="en")
 				include includes/nav.pug
 			.hero-body
 				.container.has-text-centered
-					h1.title.is-1(style="padding-top: 3rem;") Template
+					h1.title.is-1(style="padding-top: 3rem;") Clean Energy
 			.hero-foot
 		article.article
 			include includes/body.pug
@@ -25,19 +25,21 @@ html(lang="en")
 				//
 				div.field
 					h4 Total Household Energy Use:
-					form 
+					form(action="energy.php", method="_GET")
 						.label How many are in your household?
-						- var members = "[?]";
 							.control
-								input(class="input", type="text", placeholder="2, 3, etc.")
+								input(class="input", type="text", placeholder="2, 3, etc.", id="members")
+								- var members = "[?]";
 						br
 						- var kwattperson = parseFloat(members)*51.3;
 						h4 Our Estimate: 
 						p(style="color: green") It costs the #{members} people living in your house #{kwattperson} to pay for electricity each month! Check our accuracy- compare this to your real monthly electricity bill. 
+						.control
+							input(type="submit", class="button is-success", onclick="members();")
 						br
 				div.field
 					h4 Gas and Transportation:
-					form 
+					form(action="gas.php", method="_GET") 
 						.label Your Make and Model:
 						- var makenmodel = "[?]";
 							.control
@@ -67,11 +69,9 @@ html(lang="en")
 						- 
 						h4 Your Carbon Emissions:
 						p(style="color: green") You contribute approximately #{kgemissions} kilograms of CO2 emission each month.
+						.control
+							input(type="submit", class="button is-success")
 						br
-				.control
-					button(class="button is-success") Submit
-
-
 
 
 

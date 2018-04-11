@@ -16,3 +16,8 @@ function initMap () {
 		map: map
 	});
 }
+
+function members() {
+    var input = document.getElementById("members").value;
+    alert(input);
+}
