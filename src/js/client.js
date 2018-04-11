@@ -34,8 +34,4 @@ socket.on("yelpSearchResponse",function yelpSearchResponse (data) {
 	_.forEach(data.businesses, function (store) {
 		updateMap(store.coordinates, store.url);
 	});
-<<<<<<< HEAD
 });
-=======
-};
->>>>>>> 239076f560823b3cde03babfbb2358e823cd0d5e
