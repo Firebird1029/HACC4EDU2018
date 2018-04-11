@@ -60,8 +60,13 @@ html(lang="en")
 						- var mipyr = parseFloat(mipday)*365;
 						- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
 						br
+						h4 Your Spendings:
 						p(style="color: green") You drive a #{makenmodel} and spend approximately #{dollarsyr} dollars annually on gas or fuel.
 						br
+						- var kgemissions = parseFloat(mipday)*.411*30;
+						- 
+						h4 Your Carbon Emissions
+						p(style="color: green") You contribute approximately #{kgemissions} kilograms of CO2 emission each month.
 				.control
 					button(class="button is-primary") Submit
 
