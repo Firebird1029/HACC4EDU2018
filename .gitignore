@@ -3,7 +3,7 @@
 
 # Custom - Remove as necessary
 vendor
-dist/
+dist/*
 
 # Compiled source #
 ###################
