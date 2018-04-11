@@ -10,7 +10,10 @@ var express = require("express"),
 	io = require("socket.io"),
 	listener = io.listen(server),
 	pugStatic = require("pug-static"),
+	yelp = require('yelp-fusion').client("7QQ2UGj29Jmcot4RYRsDkC-_Dxo5gm3nMcokmkf1LqdkJnjLfnnBxVnM-mBLYoLcSkl4KBUzMhjt0TtVkutc0Spac_VfLJZsvorSOe9QwBT2e-KnFWeny310GdHNWnYx"),
 	utils = require("./utils.js");
+
+
 
 // Express Middleware
 // var router = require("./app/routes.js");
@@ -24,5 +27,14 @@ listener.sockets.on("connection", function connectionDetected (socket) {
 	socket.on("refreshRequest", function processRefreshRequest (options) {
 		socket.emit("refreshResponse", {});
 	});
-	socket.emit("connectionReceived")
+	socket.on("searchYelp", function nodeSearchYelp () {
+		yelp.search({
+		  term:'mcdonalds',
+		  location: 'Honolulu, HI'
+		}).then(response => {
+		  console.log(response.jsonBody.businesses[0]);
+		}).catch(e => {
+		  console.log(e);
+		});
+	});
 });
