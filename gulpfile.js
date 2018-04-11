@@ -35,7 +35,7 @@ gulp.task("js", function () {
 });
 
 gulp.task("watch", function () {
-	gulp.watch(["src/sass/*.scss"], ["css"]);
+	gulp.watch(["src/sass/*.scss", "src/sass/*.sass"], ["css"]);
 	gulp.watch(["src/js/*.js"], ["js"]);
 });
 
@@ -48,4 +48,5 @@ gulp.task("serve", function () {
 	});
 
 	gulp.watch("*.pug").on("change", browserSync.reload);
+	gulp.watch("views/*.pug").on("change", browserSync.reload);
 });
