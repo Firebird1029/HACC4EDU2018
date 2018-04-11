@@ -14,43 +14,52 @@ html(lang="en")
 			+section("Your Clean Energy Report")
 				p 
 					strong *Integers, please!
-				br
+				//
+				//
+				// HEY BRANDON THIS IS DIZA
+				// CAN U PLS FIGURE OUT IF
+				// WE CAN TURN THESE INPUTS INTO
+				// VARS AND PERFORM THESE OPERATIONS
+				// AND PRINT THEM OUT FROM THE FORM
+				// THX
+				//
+				//
 				div.totalnrgfield
 					h4 Total Household Energy Use:
 					form 
 						.label How many are in your household?
-						- var members = "[?] people";
+						- var members = "[?]";
 							input(class="input", type="text", placeholder="2, 3, etc.")
 						br
 						br
 						.label How many rooms does your house have?
-						- var rooms = "[?] rooms";
+						- var rooms = "[?]";
 							input(class="input", type="text", placeholder="7, 8, etc.")
 						br
 						br
-						p Estimate:
+						p Estimate: The #{members} people living in your house use a lot of energy!
 						br
 				div.gasfield
 					h4 Gas and Transportation:
 					form 
-							.label Make and Model:
-							- var makenmodel = "my car";
+							.label Your Make and Model:
+							- var makenmodel = "[?]";
 								input(class="input", type="text", placeholder="2008 Ford Escape, etc.")
 							br
 							br
 							.label Miles/Gallon (City):
-							- var mipg = "miles per gallon";
+							- var mipg = "[?]";
 								input(class="input", type="text", placeholder="24, 25, etc.")
 							br
 							br
 							.label Dollars/Gallon:
-							- var dollarsg = "dollars per gallon";
-								input(class="input", type="text")
+							- var dollarsg = "[?]";
+								input(class="input", type="text", placeholder="2.50, 3.00, etc.")
 							br
 							br
-							.label Your Miles/Day:
-							- var mipday = "miles per day";
-								input(class="input", type="text")
+							.label Your Average Miles/Day:
+							- var mipday = "[?]";
+								input(class="input", type="text", placeholder="35, 36, etc.")
 							- var mipyr = parseFloat(mipday)*365;
 							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
 							br
