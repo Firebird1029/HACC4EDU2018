@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					h1.title.is-1(style="padding-top: 1rem;") Template
+			.hero-foot
+		article.article
+			include includes/body.pug
+			+section("Bob")
+				p Total Household Energy Use:
+					form 
+						p How many in your household?
+						- var members = "[?] people";
+							input(type="text")
+						br
+						p How many rooms does your house have?
+						- var rooms = "[?] rooms";
+							input(type="text")
+						p Estimate:
+				p Gas and Transportation:
+					form 
+						p Make and Model mi/g
+
+
+
+
+
+		//- Footer
+		include includes/footer.pug
