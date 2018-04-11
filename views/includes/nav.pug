@@ -4,7 +4,7 @@ mixin dropdown(link)
 		.navbar-dropdown
 			block
 
-nav.navbar(style="width: 100%; position: fixed; z-index: 100; box-shadow: 0px 3px 6px #888888;")
+nav.navbar(style="width: 100%; position: fixed; z-index: 100; box-shadow: 0px 3px 6px #888888; background-color: white")
 	.navbar-brand
 		a.navbar-item(href="/index.html")
 			img(src="assets/img/logo.png")
@@ -15,15 +15,17 @@ nav.navbar(style="width: 100%; position: fixed; z-index: 100; box-shadow: 0px 3p
 	#navMenu.navbar-menu
 		.navbar-start
 			.navbar-item &nbsp;
-			+dropdown("Bob")
-				a.navbar-item(href="bob.pug") Bob
-			+dropdown("Bob")
-				a.navbar-item(href="bob.pug") Bob
-				a.navbar-item(href="bob.pug") Bob
+			+dropdown("Goals")
+				a.navbar-item(href="/localfood.html") Local Food
+				a.navbar-item(href="/cleannrg.html") Clean Energy
+				a.navbar-item(href="/natresources.html") Natural Resources
+				a.navbar-item(href="/grnworkforce.html") Green Education
+				a.navbar-item(href="/sustainablecomm.html") Sustainable Communities
+				a.navbar-item(href="/wastereduce.html") Waste Reduction
 		.navbar-end
 			.navbar-item.is-paddingless
-				a.button.is-info(href="bob.pug")
-					span Bob
+				a.button.is-info(href="/index.html")
+					span Login
 			.navbar-item
-				a.button.is-danger(href="bob.pug")
-					span Bob
+				a.button.is-primary(href="/index.html")
+					span Sign Up Now
