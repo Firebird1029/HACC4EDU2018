@@ -35,12 +35,7 @@ socket.on("yelpSearchResponse",function yelpSearchResponse (data) {
 		updateMap(store.coordinates, store.url);
 	});
 <<<<<<< HEAD
-}
-
-function members() {
-    var input = document.getElementById("members").value;
-    alert(input);
-}
-=======
 });
+=======
+};
 >>>>>>> 239076f560823b3cde03babfbb2358e823cd0d5e
