@@ -12,19 +12,33 @@ html(lang="en")
 		article.article
 			include includes/body.pug
 			+section("Bob")
-				p Total Household Energy Use:
+				h4 Total Household Energy Use:
 					form 
 						p How many in your household?
 						- var members = "[?] people";
 							input(type="text")
 						br
+						br
 						p How many rooms does your house have?
 						- var rooms = "[?] rooms";
 							input(type="text")
+						br
+						br
 						p Estimate:
-				p Gas and Transportation:
+				h4 Gas and Transportation:
 					form 
-						p Make and Model mi/g
+						p Make and Model
+							p mi/g
+							- var mipg = "miles per gallon";
+								input(type="text")
+							p $/g
+								input(type="text")
+							p Miles Driven per Day
+							- var mipday = "miles per day";
+								input(type="text")
+							- var mipyr = parseFloat(mipday)*365;
+							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg);
+						p You spend $#{dollarsyr} annually on gas or fuel.
 
 
 
