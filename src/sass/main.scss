@@ -2,6 +2,71 @@
 $primary: hsl(217, 71%, 53%);
 @import "./node_modules/bulma/bulma.sass";
 
-p {
-	color: red;
+div.circle {
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	background-color: #3cd878;
+	text-align: center;
+}
+
+div.circle:hover {
+	background-color: #dbed65;
+	color: black;
+}
+
+h3.one {
+	position: relative;
+	vertical-align: middle;
+	padding-top: 40%;
+	color: white;
+}
+
+h3.two {
+	position: relative;
+	vertical-align: middle;
+	padding-top: 30%;
+	color: white;
+}
+
+#localfood {
+	margin-left: auto;
+	margin-right: auto;
+	top: 10%;
+}
+
+#cleannrg {
+	position: absolute;
+	left: 15%;
+	top: 25%;
+}
+
+#natresources {
+	position: absolute;
+	right: 15%;
+	top: 25%;
+}
+
+#userportal {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+}
+
+#grnworkforce {
+	position: absolute;
+	right: 15%;
+	top: 60%;
+}
+
+#wastereduce {
+	position: absolute;
+	left: 15%;
+	top: 60%;
+}
+
+#sustainablecomm {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
 }
