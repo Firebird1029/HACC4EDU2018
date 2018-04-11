@@ -24,4 +24,5 @@ listener.sockets.on("connection", function connectionDetected (socket) {
 	socket.on("refreshRequest", function processRefreshRequest (options) {
 		socket.emit("refreshResponse", {});
 	});
+	socket.emit("connectionReceived")
 });
