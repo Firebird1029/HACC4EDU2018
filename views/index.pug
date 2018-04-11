@@ -7,13 +7,39 @@ html(lang="en")
 				include includes/nav.pug
 			.hero-body
 				.container.has-text-centered
-					h1.title.is-1(style="padding-top: 1rem;") Template
+					h1.title.is-1(style="padding-top: 1rem;") ZEROin
 			.hero-foot
 		article.article
 			include includes/body.pug
-			+section("Bob")
-				p ihms. 
-				a(href="http://google.com") what
+			+section("Six Sustainability Goals")
+				a(href="/localfood.html")
+					div(class="circle", id="localfood").animated.slideInDown
+						h3.one 
+							strong Local Food
+				a(href="/cleannrg.html")
+					div(class="circle", id="cleannrg").animated.slideInLeft
+						h3.one
+							strong Clean Energy
+				a(href="/userportal.html")
+					div(class="circle", id="userportal").animated.fadeIn
+						h3.one
+							strong User Info
+				a(href="/natresources.html")
+					div(class="circle", id="natresources").animated.slideInRight
+						h3.two
+							strong Natural Resources
+				a(href="/grnworkforce.html")
+					div(class="circle", id="grnworkforce").animated.slideInRight
+						h3.two
+							strong Green Education
+				a(href="/sustainablecomm.html")
+					div(class="circle", id="sustainablecomm").animated.slideInUp
+						h3.two
+							strong Sustainable Communities
+				a(href="/wastereduce.html")
+					div(class="circle", id="wastereduce").animated.slideInLeft
+						h3.two
+							strong Waste Reduction
 
 		//- Footer
 		include includes/footer.pug
