@@ -15,41 +15,47 @@ html(lang="en")
 				p 
 					strong *Integers, please!
 				br
-				div.totalenergy
+				div.totalnrgfield
 					h4 Total Household Energy Use:
 					form 
-						p How many in your household?
+						.label How many are in your household?
 						- var members = "[?] people";
-							input(type="text")
+							input(class="input", type="text", placeholder="2, 3, etc.")
 						br
 						br
-						p How many rooms does your house have?
+						.label How many rooms does your house have?
 						- var rooms = "[?] rooms";
-							input(type="text")
+							input(class="input", type="text", placeholder="7, 8, etc.")
 						br
 						br
 						p Estimate:
 						br
-				div.gasandtransport
+				div.gasfield
 					h4 Gas and Transportation:
 					form 
-							p Make and Model:
-								br
-								input(type="text")
-							p Miles/Gallon:
+							.label Make and Model:
+							- var makenmodel = "my car";
+								input(class="input", type="text", placeholder="2008 Ford Escape, etc.")
+							br
+							br
+							.label Miles/Gallon (City):
 							- var mipg = "miles per gallon";
-								input(type="text")
+								input(class="input", type="text", placeholder="24, 25, etc.")
 							br
 							br
-							p Dollars/Gallon:
+							.label Dollars/Gallon:
 							- var dollarsg = "dollars per gallon";
-								input(type="text")
-							p Your Miles/Day:
+								input(class="input", type="text")
+							br
+							br
+							.label Your Miles/Day:
 							- var mipday = "miles per day";
-								input(type="text")
+								input(class="input", type="text")
 							- var mipyr = parseFloat(mipday)*365;
 							- var dollarsyr = parseFloat(mipyr)*parseFloat(mipg)*parseFloat(dollarsg);
-							p You spend #{dollarsyr} dollars annually on gas or fuel.
+							br
+							br
+							p You drive a #{makenmodel} and spend approximately #{dollarsyr} dollars annually on gas or fuel.
 
 
 
