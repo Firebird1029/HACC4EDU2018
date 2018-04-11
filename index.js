@@ -27,14 +27,15 @@ listener.sockets.on("connection", function connectionDetected (socket) {
 	socket.on("refreshRequest", function processRefreshRequest (options) {
 		socket.emit("refreshResponse", {});
 	});
-	socket.on("searchYelp", function nodeSearchYelp () {
+	socket.on("yelpSearchRequest", function yelpSearchRequest (data) {
 		yelp.search({
-		  term:'mcdonalds',
-		  location: 'Honolulu, HI'
+			term: data.term,
+			location: "Honolulu, HI"
 		}).then(response => {
-		  console.log(response.jsonBody.businesses[0]);
+			console.log("Successfully searched for " + data.term + "!");
+			socket.emit("yelpSearchResponse", {businesses: response.jsonBody.businesses});
 		}).catch(e => {
-		  console.log(e);
+			console.log(e);
 		});
 	});
 });

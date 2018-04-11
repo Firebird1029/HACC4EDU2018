@@ -19,14 +19,14 @@ html(lang="en")
 								article.tile.is-child
 									.field.has-addons
 										.control.is-expanded
-											input.input(type="text", placeholder="Find a restaurant")
+											input#restaurantSearch.input(type="text", placeholder="Find a restaurant")
 										.control
-											a.button.is-info
+											a#restaurantSearchBtn.button.is-info
 												span Search
 
 								article.tile.is-child
 									p.title Map
-									div#map.is-fullwidth(style="height: 20rem; background-color: red")
+									div#map.is-fullwidth(style="height: 20rem;")
 								article.tile.is-child
 									p.title ...tiles
 									p.subtitle Bottom tile
@@ -42,5 +42,5 @@ html(lang="en")
 									p.subtitle Bottom tile
 
 		//- Footer
-		script(async, defer, type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB77nR_TKpRV6CJ_B5kgqOzK8NshI61AhI&callback=initMap")
 		include includes/footer.pug
+		script(async, defer, type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB77nR_TKpRV6CJ_B5kgqOzK8NshI61AhI&callback=initMap")
