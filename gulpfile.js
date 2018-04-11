@@ -48,5 +48,5 @@ gulp.task("serve", function () {
 	});
 
 	gulp.watch("*.pug").on("change", browserSync.reload);
-	gulp.watch("views/*.pug").on("change", browserSync.reload);
+	gulp.watch("views/**/*.pug").on("change", browserSync.reload);
 });
