@@ -60,3 +60,17 @@ function formatAMPM (date) {
 	var strTime = hours + ':' + minutes + ' ' + ampm;
 	return strTime;
 }
+
+$("#membersInput").on("keyup", function () {
+	$("#membersSpan").text($("#membersInput").val() || 0);
+$("#householdCostSpan").text(Math.round(parseFloat($("#membersInput").val() || 0) * 51.3));
+});
+
+$(".gasTransInputs").on("keyup", function () {
+	var dollarsyr = Math.round(parseFloat($("#mipday").val()) * 365 * parseFloat($("#mipg").val()) * parseFloat($("#dollarsg").val()));
+	var kgemissions = Math.round(parseFloat($("#mipday").val()) * 0.411 * 30);
+
+	$("#makenmodelSpan").text($("#makenmodel").val() || "car");
+	$("#dollarsyrSpan").text(dollarsyr || 0);
+	$("#kgemissionsSpan").text(kgemissions || 0);
+});
