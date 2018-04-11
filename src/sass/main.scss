@@ -3,16 +3,14 @@ $primary: hsl(217, 71%, 53%);
 @import "./node_modules/bulma/bulma.sass";
 
 div.circle {
-	height: 160px;
-	width: 160px;
+	height: 175px;
+	width: 175px;
 	border-radius: 50%;
-	background-color: #3cd878;
 	text-align: center;
 }
 
 div.circle:hover {
 	background-color: #dbed65;
-	color: black;
 }
 
 h3.one {
@@ -33,40 +31,76 @@ h3.two {
 	margin-left: auto;
 	margin-right: auto;
 	top: 10%;
+	background-color:  #40ff00;
+}
+
+#localfood:hover {
+	background-color: #dbed65;
 }
 
 #cleannrg {
 	position: absolute;
 	left: 15%;
 	top: 25%;
+	background-color: #ffdb4d;
+}
+
+#cleannrg:hover {
+	background-color: #ffffb3;
 }
 
 #natresources {
 	position: absolute;
 	right: 15%;
 	top: 25%;
+	background-color: #00b300;
 }
+
+#natresources:hover {
+	background-color: #b3ffb3;
+} 
 
 #userportal {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10%;
+	font-weight: 200;
+	background-color: #333399;
+}
+
+#userportal:hover {
+	background-color: #cce6ff;
 }
 
 #grnworkforce {
 	position: absolute;
 	right: 15%;
 	top: 60%;
+	background-color: #6666ff;
+}
+
+#grnworkforce:hover {
+	background-color: #e6ccff;
 }
 
 #wastereduce {
 	position: absolute;
 	left: 15%;
 	top: 60%;
+	background-color: #ff5050;
+}
+
+#wastereduce:hover {
+	background-color: #ffcccc;
 }
 
 #sustainablecomm {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10%;
+	background-color: #5cd6d6;
+}
+
+#sustainablecomm:hover {
+	background-color: #ccfff5;
 }
