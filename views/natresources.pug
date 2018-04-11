@@ -1,0 +1,17 @@
+doctype html
+html(lang="en", title="ZEROin")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					h1.title.is-1(style="padding-top: 3rem;") ZEROin
+			.hero-foot
+		article.article
+			include includes/body.pug
+			+section
+			img(id="natresourcesmockup", src="https://preview.ibb.co/kgkBWc/natresourcespage.jpg", alt="Natural Resources Mockup")
+		//- Footer
+		include includes/footer.pug
